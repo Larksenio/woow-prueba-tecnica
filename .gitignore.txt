@@ -1,0 +1,21 @@
+# dependencies
+**/node_modules
+
+# build
+**/dist
+**/build
+
+# env files
+**/.env
+**/.env.*
+
+# logs
+**/*.log
+
+# prisma
+**/prisma/dev.db
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
