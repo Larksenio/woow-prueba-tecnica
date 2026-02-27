@@ -61,7 +61,7 @@ Health check: http://localhost:3001/health
 cd frontend
 npm install
 npm run dev
-
+```
 Frontend disponible en:
 
 http://localhost:5173
@@ -114,4 +114,4 @@ En la raíz:
 git add README.md
 git commit -m "docs: update README"
 git push
-
+```
