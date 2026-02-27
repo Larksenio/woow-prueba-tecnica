@@ -49,6 +49,7 @@ cd backend
 npm install
 npx prisma migrate dev
 npm run dev
+```
 Backend disponible en:
 
 http://localhost:3001
