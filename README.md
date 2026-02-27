@@ -70,17 +70,17 @@ http://localhost:5173
 ### Auth
 
 POST /api/auth/register
-```json
+
 { "name":"User", "email":"user@test.com", "password":"123456" }
 POST /api/auth/login
-```json
+
 { "email":"user@test.com", "password":"123456" }
 Usuario autenticado (requiere Bearer Token)
 
 GET /api/users/me
 
 PUT /api/users/me
-```json
+
 { "name":"Nuevo Nombre", "email":"nuevo@test.com", "password":"nuevaPass123" }
 Admin (solo role admin)
 
