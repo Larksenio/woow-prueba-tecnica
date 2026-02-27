@@ -44,6 +44,7 @@ PostgreSQL queda expuesto en:
 localhost:5433 (mapeo 5433 -> 5432)
 
 2) Backend
+```bash
 cd backend
 npm install
 npx prisma migrate dev
@@ -55,6 +56,7 @@ http://localhost:3001
 Health check: http://localhost:3001/health
 
 3) Frontend
+```bash
 cd frontend
 npm install
 npm run dev
@@ -64,17 +66,20 @@ Frontend disponible en:
 http://localhost:5173
 
 ### Endpoints 
-Auth
+### Auth
 
 POST /api/auth/register
+```json
 { "name":"User", "email":"user@test.com", "password":"123456" }
 POST /api/auth/login
+```json
 { "email":"user@test.com", "password":"123456" }
 Usuario autenticado (requiere Bearer Token)
 
 GET /api/users/me
 
 PUT /api/users/me
+```json
 { "name":"Nuevo Nombre", "email":"nuevo@test.com", "password":"nuevaPass123" }
 Admin (solo role admin)
 
@@ -103,6 +108,8 @@ Variables sensibles se manejan por .env (no se suben al repo).
 ### Commit y push
 
 En la raíz:
+```md
+```bash
 git add README.md
 git commit -m "docs: update README"
 git push
