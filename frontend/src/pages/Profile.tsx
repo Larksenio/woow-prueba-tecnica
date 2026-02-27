@@ -26,16 +26,25 @@ export default function Profile() {
       if (name) payload.name = name;
       if (email) payload.email = email;
       if (password) payload.password = password;
+      if (password && password.length < 8) {
+  setErr("La contraseña debe tener al menos 8 caracteres.");
+  return;
+}
 
       await api("/api/users/me", { method: "PUT", body: JSON.stringify(payload) });
       setPassword("");
       await refreshMe();
       setMsg("Perfil actualizado");
     } catch (e: any) {
-      setErr(e?.error ?? "No se pudo actualizar");
-    } finally {
-      setBusy(false);
-    }
+  const msg =
+    e?.details?.[0]?.message ||
+    e?.error ||
+    "No se pudo actualizar";
+
+  setErr(msg);
+} finally {
+  setBusy(false);
+}
   }
 
   return (
