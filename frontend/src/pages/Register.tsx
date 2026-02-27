@@ -21,6 +21,10 @@ export default function Register() {
   const [busy, setBusy] = useState(false);
 
   async function onSubmit(e: React.FormEvent) {
+    if (password.length < 8) {
+  setError("La contraseña debe tener al menos 8 caracteres.");
+  return;
+}
     e.preventDefault();
     setError(null);
     setBusy(true);
@@ -35,10 +39,16 @@ export default function Register() {
       nav("/profile");
       window.location.reload(); // simple para que AuthContext recargue user (rápido y efectivo)
     } catch (err: any) {
-      setError(err?.error ?? "No se pudo registrar");
-    } finally {
-      setBusy(false);
-    }
+  // Backend devuelve { error, details?: [{ path, message }] }
+  const msg =
+    err?.details?.[0]?.message ||
+    err?.error ||
+    "No se pudo registrar";
+
+  setError(msg);
+} finally {
+  setBusy(false);
+}
   }
 
   return (
