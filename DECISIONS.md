@@ -64,4 +64,20 @@ Este documento resume las decisiones técnicas tomadas para implementar la prueb
 - **Trade-off:** requiere Docker Desktop instalado, pero es común en evaluaciones técnicas.
 
 ## Notas finales
-- Se priorizó: **funcionalidad completa**, **estructura limpia**, **seguridad base**, y **documentación reproducible** (README + env examples).
+- Se priorizó: **funcionalidad completa**, **estructura limpia**, **seguridad base**, y **documentación reproducible** README  env examples.
+
+## Desafíos enfrentados
+- Conflicto de puertos con PostgreSQL local 5432 vs PostgreSQL en Docker; se resolvió exponiendo Docker en 5433.
+- Estandarizar respuestas de error Zod a 400 para evitar 500 en validaciones.
+- Mantener consistencia de autenticación entre frontend y backend.
+
+## Qué mejoraría con más tiempo
+- Tests automatizados para auth y endpoints de usuario.
+- Mejoras de UI/UX componentes reutilizables, feedback visual, loaders, toasts.
+- Manejo de sesiones más robusto refresh token.
+
+## Cómo escalaría la solución
+- Separar configuración por entornos dev y usar un gestor de secretos.
+- Contenerizar backend y frontend y orquestar con Compose completo.
+- Agregar rate limiting, logs estructurados y monitoreo .
+- Modularizar el dominio y agregar pruebas CI.

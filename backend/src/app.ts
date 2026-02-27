@@ -14,5 +14,7 @@ app.get("/health", (_req, res) => res.json({ ok: true, time: new Date().toISOStr
 
 app.use("/api/auth", authRouter);
 app.use("/api/users", usersRouter);
-
+app.use((_req, res) => {
+  res.status(404).json({ error: "Recurso no encontrado" });
+});
 app.use(errorHandler);

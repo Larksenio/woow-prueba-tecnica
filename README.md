@@ -115,3 +115,13 @@ git add README.md
 git commit -m "docs: update README"
 git push
 ```
+## Credenciales de prueba
+
+Puedes crear usuarios desde `/register`. Para probar el rol admin:
+- Admin: (crear con role=admin desde Postman)  
+  email: `admin@test.com`  
+  password: `12345678`
+
+- User:  
+  email: `user@test.com`  
+  password: `12345678`
